@@ -97,12 +97,10 @@ public class ServerEx03 extends Thread {
 				map.put(userId, pw);
 				// 서버 생성 및 쓰레드 실행
 				new ServerEx03(userId, br).start();
-
 			} catch (SocketException e) {
 				try {
 					if (br != null)	br.close();
 					if (pw != null)	pw.close();
-					
 					System.out.println(userId + "클라이언트와 연결이 끊어졌습니다.");
 				} catch (IOException e1) {
 					System.out.println(userId +"클라이언트 연결 해제 오류!");
@@ -110,8 +108,6 @@ public class ServerEx03 extends Thread {
 			} catch (IOException e) {
 				System.out.println(userId +"데이터 입출력 오류!");
 //				e.printStackTrace();
-			} finally {
-
 			}
 		} // end of while
 	}
